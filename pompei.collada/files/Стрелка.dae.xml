@@ -129,7 +129,7 @@
       <mesh>
         <source id="Mesh_bolshoy_strely-mesh-positions">
           <float_array id="Mesh_bolshoy_strely-mesh-positions-array" count="675">
-           -1.20548e-7 0.9999997   0.6509575 -1.20548e-7 -2.94844e-7  2.650958    0.1950902   0.980785
+            0          0.9999997   0.6509575 -1.20548e-7 -2.94844e-7  2.650958    0.1950902   0.980785
             0.6509575  0.3826833   0.9238792  0.6509575   0.5555701   0.8314693   0.6509575   0.7071067
             0.7071065  0.6509575   0.8314695  0.5555699   0.6509575   0.9238794   0.3826831   0.6509575
             0.9807851  0.19509     0.6509575  0.9999999  -2.19346e-7  0.6509575   0.9807852  -0.1950905
@@ -423,8 +423,8 @@
     <geometry id="Mesh_svetelischa-mesh" name="Mesh svetelischa">
       <mesh>
         <source id="Mesh_svetelischa-mesh-positions">
-          <float_array id="Mesh_svetelischa-mesh-positions-array" count="12">-1 -1 0 1 -1 0
-            -1 1 0 1 1 0
+          <float_array id="Mesh_svetelischa-mesh-positions-array" count="12">
+            -1 -1 0 1 -1 0 -1 1 0 1 1 0
           </float_array>
           <technique_common>
             <accessor source="#Mesh_svetelischa-mesh-positions-array" count="4" stride="3">
@@ -435,7 +435,8 @@
           </technique_common>
         </source>
         <source id="Mesh_svetelischa-mesh-normals">
-          <float_array id="Mesh_svetelischa-mesh-normals-array" count="6">0 0 1 0 0 1
+          <float_array id="Mesh_svetelischa-mesh-normals-array" count="6">
+            0 0 1 0 0 1
           </float_array>
           <technique_common>
             <accessor source="#Mesh_svetelischa-mesh-normals-array" count="2" stride="3">
@@ -451,7 +452,7 @@
         <polylist material="Svechenie_1-material" count="2">
           <input semantic="VERTEX" source="#Mesh_svetelischa-mesh-vertices" offset="0" />
           <input semantic="NORMAL" source="#Mesh_svetelischa-mesh-normals" offset="1" />
-          <vcount>3 3 </vcount>
+          <vcount>3 3</vcount>
           <p>0 0 1 0 3 0 2 1 0 1 3 1</p>
         </polylist>
       </mesh>
@@ -459,13 +460,13 @@
     <geometry id="Mesh_malenkoy_strely-mesh" name="Mesh malenkoy strely">
       <mesh>
         <source id="Mesh_malenkoy_strely-mesh-positions">
-          <float_array id="Mesh_malenkoy_strely-mesh-positions-array" count="675">-2.02842e-7
-            1.721507 0.6509574 -1.20548e-7 -2.94844e-7 4.221348 0.3358493 1.688429 0.6509574
+          <float_array id="Mesh_malenkoy_strely-mesh-positions-array" count="675">
+            0 1.721507 0.6509574 0 0 4.221348 0.3358493 1.688429 0.6509574
             0.6587924 1.590465 0.6509574 0.9564183 1.431381 0.6509574 1.21729 1.217289 0.6509574
             1.431381 0.956418 0.6509574 1.590466 0.658792 0.6509574 1.688429 0.3358491 0.6509574
             1.721508 -3.87686e-7 0.6509574 1.688429 -0.3358499 0.6509574 1.590466 -0.6587928
             0.6509574 1.431381 -0.956419 0.6509574 1.21729 -1.21729 0.6509574 0.9564183 -1.431382
-            0.6509574 0.6587921 -1.590467 0.6509574 0.3358489 -1.68843 0.6509574 -7.6378e-7
+            0.6509574 0.6587921 -1.590467 0.6509574 0.3358489 -1.68843 0.6509574 0
             -1.721508 0.6509574 -0.3358504 -1.68843 0.6509574 -0.6587935 -1.590466 0.6509574
             -0.9564196 -1.431381 0.6509574 -1.217291 -1.21729 0.6509574 -1.431382 -0.956418
             0.6509574 -1.590467 -0.6587918 0.6509574 -1.68843 -0.3358486 0.6509574 -1.721508
@@ -545,8 +546,7 @@
             0.6509574
           </float_array>
           <technique_common>
-            <accessor source="#Mesh_malenkoy_strely-mesh-positions-array" count="225"
-              stride="3">
+            <accessor source="#Mesh_malenkoy_strely-mesh-positions-array" count="225" stride="3">
               <param name="X" type="float" />
               <param name="Y" type="float" />
               <param name="Z" type="float" />

@@ -5,7 +5,7 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.71.0 commit date:2014-06-25, commit time:18:36, hash:9337574</authoring_tool>
     </contributor>
-    <created>2014-10-10T14:52:54</created>
+     <created>2014-10-10T14:52:54</created>
     <modified>2014-10-10T14:52:54</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
@@ -43,7 +43,7 @@
       </technique_common>
       <extra>
         <technique profile="blender">
-          <adapt_thresh>0.000999987</adapt_thresh>
+          <adapt_thresh>0.001</adapt_thresh>
           <area_shape>1</area_shape>
           <area_size>0.1</area_size>
           <area_sizey>0.1</area_sizey>
@@ -60,10 +60,10 @@
           <bufflag>0</bufflag>
           <bufsize>2880</bufsize>
           <buftype>2</buftype>
-          <clipend>30.002</clipend>
-          <clipsta>1.000799</clipsta>
-          <compressthresh>0.04999995</compressthresh>
-          <dist sid="blender_dist">29.99998</dist>
+          <clipend>30</clipend>
+          <clipsta>1</clipsta>
+          <compressthresh>0.05</compressthresh>
+          <dist sid="blender_dist">30</dist>
           <energy sid="blender_energy">1</energy>
           <falloff_type>2</falloff_type>
           <filtertype>0</filtertype>
@@ -81,9 +81,9 @@
           <red>1</red>
           <samp>3</samp>
           <shadhalostep>0</shadhalostep>
-          <shadow_b sid="blender_shadow_b">0</shadow_b>
-          <shadow_g sid="blender_shadow_g">0</shadow_g>
           <shadow_r sid="blender_shadow_r">0</shadow_r>
+          <shadow_g sid="blender_shadow_g">0</shadow_g>
+          <shadow_b sid="blender_shadow_b">0</shadow_b>
           <sky_colorspace>0</sky_colorspace>
           <sky_exposure>1</sky_exposure>
           <skyblendfac>1</skyblendfac>
@@ -111,7 +111,7 @@
       </technique_common>
       <extra>
         <technique profile="blender">
-          <adapt_thresh>9.99987e-4</adapt_thresh>
+          <adapt_thresh>0.001</adapt_thresh>
           <area_shape>1</area_shape>
           <area_size>0.1</area_size>
           <area_sizey>0.1</area_sizey>
@@ -128,10 +128,10 @@
           <bufflag>0</bufflag>
           <bufsize>2880</bufsize>
           <buftype>2</buftype>
-          <clipend>30.002</clipend>
-          <clipsta>1.000799</clipsta>
-          <compressthresh>0.04999995</compressthresh>
-          <dist sid="blender_dist">29.99998</dist>
+          <clipend>30</clipend>
+          <clipsta>1</clipsta>
+          <compressthresh>0.05</compressthresh>
+          <dist sid="blender_dist">30</dist>
           <energy sid="blender_energy">1</energy>
           <falloff_type>2</falloff_type>
           <filtertype>0</filtertype>
@@ -207,7 +207,9 @@
     <geometry id="Cube_001-mesh" name="Cube.001">
       <mesh>
         <source id="Cube_001-mesh-positions">
-          <float_array id="Cube_001-mesh-positions-array" count="24">1 1 -1 1 -1 -1 -1 -0.9999998 -1 -0.9999997 1 -1 1 0.9999995 1 0.9999994 -1.000001 1 -1 -0.9999997 1 -1 1 1</float_array>
+          <float_array id="Cube_001-mesh-positions-array" count="24">
+            1 1 -1 1 -1 -1 -1 -1 -1 -1 1 -1 1 1 1 1 -1 1 -1 -1 1 -1 1 1
+          </float_array>
           <technique_common>
             <accessor source="#Cube_001-mesh-positions-array" count="8" stride="3">
               <param name="X" type="float"/>
@@ -217,7 +219,9 @@
           </technique_common>
         </source>
         <source id="Cube_001-mesh-normals">
-          <float_array id="Cube_001-mesh-normals-array" count="36">0 0 -1 0 0 1 1 -2.98023e-7 2.98023e-7 -6.25849e-7 -1 0 -1 0 0 0 1 2.38419e-7 0 0 -1 0 0 1 1 0 0 0 -1 -4.76837e-7 -1 1.49012e-7 -1.49012e-7 2.38419e-7 1 0</float_array>
+          <float_array id="Cube_001-mesh-normals-array" count="36">
+            0 0 -1 0 0 1 1 0 0 0 -1 0 -1 0 0 0 1 0 0 0 -1 0 0 1 1 0 0 0 -1 0 -1 0 0 0 1 0
+          </float_array>
           <technique_common>
             <accessor source="#Cube_001-mesh-normals-array" count="12" stride="3">
               <param name="X" type="float"/>
@@ -232,8 +236,11 @@
         <polylist material="Material_001-material" count="12">
           <input semantic="VERTEX" source="#Cube_001-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube_001-mesh-normals" offset="1"/>
-          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
-          <p>0 0 1 0 2 0 7 1 6 1 5 1 4 2 5 2 1 2 5 3 6 3 2 3 2 4 6 4 7 4 4 5 0 5 3 5 3 6 0 6 2 6 4 7 7 7 5 7 0 8 4 8 1 8 1 9 5 9 2 9 3 10 2 10 7 10 7 11 4 11 3 11</p>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+          <p>
+            0 0 1 0 2 0 7 1 6 1 5 1 4 2 5 2 1 2 5 3 6 3 2 3 2  4 6  4 7  4 4  5 0  5 3  5
+            3 6 0 6 2 6 4 7 7 7 5 7 0 8 4 8 1 8 1 9 5 9 2 9 3 10 2 10 7 10 7 11 4 11 3 11
+          </p>
         </polylist>
       </mesh>
     </geometry>
@@ -280,7 +287,7 @@
         <rotate sid="rotationZ">0 0 1 46.69194</rotate>
         <rotate sid="rotationY">0 1 0 0.619768</rotate>
         <rotate sid="rotationX">1 0 0 63.5593</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
+        <scale sid="scale">1 1 1</scale>
         <instance_camera url="#Camera-camera"/>
       </node>
       <node id="Lamp" name="Lamp" type="NODE">
@@ -288,7 +295,7 @@
         <rotate sid="rotationZ">0 0 1 106.9363</rotate>
         <rotate sid="rotationY">0 1 0 3.163707</rotate>
         <rotate sid="rotationX">1 0 0 37.26105</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
+        <scale sid="scale">1 1 1</scale>
         <instance_light url="#Lamp-light"/>
       </node>
       <node id="Lamp_001" name="Lamp_001" type="NODE">
@@ -296,7 +303,7 @@
         <rotate sid="rotationZ">0 0 1 106.9363</rotate>
         <rotate sid="rotationY">0 1 0 3.163709</rotate>
         <rotate sid="rotationX">1 0 0 37.26106</rotate>
-        <scale sid="scale">1 0.9999999 1</scale>
+        <scale sid="scale">1 1 1</scale>
         <instance_light url="#Lamp_001-light"/>
       </node>
       <node id="Cube_001" name="Cube_001" type="NODE">
