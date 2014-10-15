@@ -5,13 +5,11 @@ import java.util.List;
 
 public class PoligonalMesh {
   
-  private String id;
+  public final String id;
   
   public PoligonalMesh(String id) {
     this.id = id;
   }
-  
-  public Matrix transform = new Matrix();
   
   private final List<Float> points = new ArrayList<>();
   
@@ -35,7 +33,7 @@ public class PoligonalMesh {
     indexes.add(poligon);
   }
   
-  public void appendGeometry(StringBuilder sb) {
+  public void append(StringBuilder sb) {
     sb.append("<geometry id=\"").append(id).append("-mesh\" name=\"").append(id).append("\">");
     sb.append("<mesh>");
     
@@ -48,22 +46,8 @@ public class PoligonalMesh {
     sb.append("</geometry>");
   }
   
-  public void appendNode(StringBuilder sb) {
-    sb.append("<node id=\"").append(id).append("-node\" name=\"");
-    sb.append(id).append("\" type=\"NODE\">");
-    if (transform != null) {
-      sb.append("<matrix sid=\"transform\">");
-      transform.appendDataTo(sb);
-      sb.append("</matrix>");
-    }
-    sb.append("<instance_geometry url=\"#").append(id).append("-mesh\">");
-    sb.append("</instance_geometry>");
-    sb.append("</node>");
-  }
-  
   private void appendPolylist(StringBuilder sb) {
-    sb.append("<polylist material=\"").append(id).append("-material\" count=\"");
-    sb.append(indexes.size()).append("\">");
+    sb.append("<polylist count=\"").append(indexes.size()).append("\">");
     sb.append("<input semantic=\"VERTEX\" source=\"#").append(id).append("-mesh-vertices\"");
     if (normals.size() > 0) sb.append(" offset=\"0\"");
     sb.append(" />");
@@ -74,8 +58,14 @@ public class PoligonalMesh {
     }
     
     sb.append("<vcount>");
-    for (int[] x : indexes) {
-      sb.append(x.length).append(' ');
+    if (normals.size() > 0) {
+      for (int[] x : indexes) {
+        sb.append(x.length / 2).append(' ');
+      }
+    } else {
+      for (int[] x : indexes) {
+        sb.append(x.length).append(' ');
+      }
     }
     sb.append("</vcount>");
     
@@ -105,6 +95,7 @@ public class PoligonalMesh {
     for (Float x : normals) {
       sb.append(x).append(' ');
     }
+    sb.append("</float_array>");
     sb.append("<technique_common>");
     sb.append("<accessor source=\"#" + id + "-mesh-normals-array\" count=\"")
         .append(normals.size() / 3).append("\" stride=\"3\">");

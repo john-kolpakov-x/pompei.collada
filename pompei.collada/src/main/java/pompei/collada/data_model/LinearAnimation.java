@@ -7,18 +7,20 @@ public class LinearAnimation {
   private final List<Float> timeList = new ArrayList<>();
   private final List<Float> valueList = new ArrayList<>();
   private final String id;
-  private final String target;
+  private final Node target;
   private final String valueName;
+  private final String targetAttribute;
   
   public void addKey(float time, float value) {
     timeList.add(time);
     valueList.add(value);
   }
   
-  public LinearAnimation(String id, String valueName, String target) {
+  public LinearAnimation(String id, String valueName, Node target, String targetAttribute) {
     this.id = id;
     this.valueName = valueName;
     this.target = target;
+    this.targetAttribute = targetAttribute;
   }
   
   public void append(StringBuilder sb) {
@@ -35,8 +37,8 @@ public class LinearAnimation {
   }
   
   private void appendChannel(StringBuilder sb) {
-    sb.append("<channel source=\"#").append(id).append("-sampler\" target=\"").append(target)
-        .append("\"/>");
+    sb.append("<channel source=\"#").append(id).append("-sampler\" target=\"")
+        .append(target.getId()).append('/').append(targetAttribute).append("\"/>");
   }
   
   private void appendSampler(StringBuilder sb) {
@@ -62,6 +64,7 @@ public class LinearAnimation {
     sb.append("<accessor source=\"#").append(id).append("-interpolation-array\" count=\"")
         .append(size).append("\" stride=\"1\">");
     sb.append("<param name=\"INTERPOLATION\" type=\"name\"/>");
+    sb.append("</accessor>");
     sb.append("</technique_common>");
     
     sb.append("</source>");
@@ -80,6 +83,7 @@ public class LinearAnimation {
     sb.append("<accessor source=\"#").append(id).append("-output-array\" count=\"").append(size)
         .append("\" stride=\"1\">");
     sb.append("<param name=\"").append(valueName).append("\" type=\"float\"/>");
+    sb.append("</accessor>");
     sb.append("</technique_common>");
     
     sb.append("</source>");
@@ -98,6 +102,7 @@ public class LinearAnimation {
     sb.append("<accessor source=\"#").append(id).append("-input-array\" count=\"").append(size)
         .append("\" stride=\"1\">");
     sb.append("<param name=\"TIME\" type=\"float\"/>");
+    sb.append("</accessor>");
     sb.append("</technique_common>");
     
     sb.append("</source>");
