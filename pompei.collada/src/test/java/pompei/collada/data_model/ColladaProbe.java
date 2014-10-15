@@ -95,6 +95,6 @@ public class ColladaProbe {
       out.close();
     }
     
-    System.out.println("OK");
+    System.out.println("OK OK");
   }
 }
