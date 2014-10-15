@@ -11,6 +11,8 @@ public class PoligonalMesh {
     this.id = id;
   }
   
+  public Matrix transform = new Matrix();
+  
   private final List<Float> points = new ArrayList<>();
   
   public void addPoint(float x, float y, float z) {
@@ -44,6 +46,19 @@ public class PoligonalMesh {
     
     sb.append("</mesh>");
     sb.append("</geometry>");
+  }
+  
+  public void appendNode(StringBuilder sb) {
+    sb.append("<node id=\"").append(id).append("-node\" name=\"");
+    sb.append(id).append("\" type=\"NODE\">");
+    if (transform != null) {
+      sb.append("<matrix sid=\"transform\">");
+      transform.appendDataTo(sb);
+      sb.append("</matrix>");
+    }
+    sb.append("<instance_geometry url=\"#").append(id).append("-mesh\">");
+    sb.append("</instance_geometry>");
+    sb.append("</node>");
   }
   
   private void appendPolylist(StringBuilder sb) {

@@ -784,7 +784,7 @@
         <instance_camera url="#Kamera-camera" />
       </node>
       <node id="Bolshaya_strela" name="Bolshaya_strela" type="NODE">
-        <matrix sid="transform">1 0 0 1.20548e-7 0 1 0 2.94844e-7 0 0 1 0.003431678 0 0 0 1</matrix>
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Mesh_bolshoy_strely-mesh">
           <bind_material>
             <technique_common>
