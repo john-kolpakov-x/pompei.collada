@@ -719,7 +719,7 @@
         <instance_light url="#Lamp-light" />
       </node>
       <node id="Cube" name="Cube" type="NODE">
-        <translate sid="location">-0.2944908 0.04302774 5.95823e-4</translate>
+        <translate sid="location">0 0 0</translate>
         <rotate sid="rotationZ">0 0 1 0</rotate>
         <rotate sid="rotationY">0 1 0 0</rotate>
         <rotate sid="rotationX">1 0 0 0</rotate>
