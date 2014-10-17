@@ -7,11 +7,15 @@ public class PoligonalMesh {
   
   public final String id;
   
-  public PoligonalMesh(String id) {
+  PoligonalMesh(String id) {
     this.id = id;
   }
   
   private final List<Float> points = new ArrayList<>();
+  
+  public int pointCount() {
+    return points.size() / 3;
+  }
   
   public void addPoint(float x, float y, float z) {
     points.add(x);
@@ -20,6 +24,10 @@ public class PoligonalMesh {
   }
   
   private final List<Float> normals = new ArrayList<>();
+  
+  public int normalCount() {
+    return normals.size() / 3;
+  }
   
   public void addNormal(float x, float y, float z) {
     normals.add(x);

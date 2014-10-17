@@ -1,5 +1,7 @@
 package pompei.collada.model;
 
+import pompei.collada.data_model.Vec3;
+
 public class U {
   
   public static void appendAny(StringBuilder sb, String key, Object value) {
@@ -32,5 +34,10 @@ public class U {
     String id = hasId.getId();
     if (id == null) return;
     sb.append(' ').append(key).append("=\"").append(id).append('"');
+  }
+  
+  public static String toStr(Vec3 vec) {
+    if (vec == null) return "";
+    return vec.x + " " + vec.y + " " + vec.z;
   }
 }

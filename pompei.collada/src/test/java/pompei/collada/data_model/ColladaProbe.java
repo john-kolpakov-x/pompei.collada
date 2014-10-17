@@ -80,7 +80,8 @@ public class ColladaProbe {
     StringBuilder sb = new StringBuilder();
     collada.append(sb);
     
-    String dir = "/home/pompei/discs/linux-data/blender/projects/";
+    //    String dir = "/home/pompei/discs/linux-data/blender/projects/";
+    String dir = "build/";
     
     {
       File outFile = new File(dir + "probe.dae.xml");

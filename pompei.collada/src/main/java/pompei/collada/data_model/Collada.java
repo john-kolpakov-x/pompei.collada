@@ -62,9 +62,15 @@ public class Collada {
     sb.append("<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">");
   }
   
-  public Node newPoligonalMeshNode(String id, PoligonalMesh mesh) {
+  public PoligonalMeshNode newPoligonalMeshNode(String id, PoligonalMesh mesh) {
     PoligonalMeshNode ret = new PoligonalMeshNode(id, mesh);
     nodeList.add(ret);
+    return ret;
+  }
+  
+  public PoligonalMesh newPoligonalMesh(String id) {
+    PoligonalMesh ret = new PoligonalMesh(id);
+    meshList.add(ret);
     return ret;
   }
 }
