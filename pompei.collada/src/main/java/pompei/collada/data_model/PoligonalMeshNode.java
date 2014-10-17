@@ -13,7 +13,7 @@ public class PoligonalMeshNode implements Node {
   
   public final Vec3 location = new Vec3();
   public final Vec3 rotation = new Vec3();
-  public final Vec3 scale = new Vec3();
+  public final Vec3 scale = new Vec3(1, 1, 1);
   
   @Override
   public void append(StringBuilder sb) {

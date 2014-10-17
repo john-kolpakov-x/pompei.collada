@@ -1,7 +1,12 @@
-package pompei.collada.data_model;
+package pompei.collada.probes;
 
 import java.io.File;
 import java.io.PrintStream;
+
+import pompei.collada.data_model.Collada;
+import pompei.collada.data_model.LinearAnimation;
+import pompei.collada.data_model.Node;
+import pompei.collada.data_model.PoligonalMesh;
 
 public class ColladaProbe {
   public static void main(String[] args) throws Exception {
@@ -9,7 +14,7 @@ public class ColladaProbe {
     
     //единичный куб, одна вершина в центре (её индекс 3 (начиная с нуля)),
     //а ребра уходят по осям в положительном направлении для каждой оси.
-    PoligonalMesh cube = new PoligonalMesh("Cube");
+    PoligonalMesh cube = collada.newPoligonalMesh("Cube");
     cube.addPoint(1, 0, 0);//0
     cube.addPoint(1, 1, 0);//1
     cube.addPoint(0, 1, 0);//2

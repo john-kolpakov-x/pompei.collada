@@ -1,8 +1,10 @@
-package pompei.collada.data_model;
+package pompei.collada.probes;
 
 import java.io.File;
 import java.io.PrintStream;
 
+import pompei.collada.data_model.Collada;
+import pompei.collada.data_model.PoligonalMesh;
 import pompei.collada.factories.Cylinder;
 
 public class CylinderProbe {
@@ -13,7 +15,7 @@ public class CylinderProbe {
     
     PoligonalMesh cylinder = collada.newPoligonalMesh(name);
     
-    Cylinder.createMesh(cylinder, 4, 1, -1, +1, false);
+    Cylinder.createMesh(cylinder, 40, 1, -1, +1, true, true);
     
     collada.newPoligonalMeshNode("Cylinder_node", cylinder);
     
