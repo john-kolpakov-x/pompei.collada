@@ -15,9 +15,17 @@ public class CylinderProbe {
     
     PoligonalMesh cylinder = collada.newPoligonalMesh(name);
     
-    Cylinder.createMesh(cylinder, 40, 1, -1, +1, true, true);
+    Cylinder c = new Cylinder();
+    c.N = 40;
+    c.R = 1;
+    c.z1 = -1;
+    c.z2 = +1;
+    c.closed = true;
+    c.quard = true;
     
-    collada.newPoligonalMeshNode("Cylinder_node", cylinder);
+    c.appendMesh(cylinder);
+    
+    collada.newPoligonalMeshNode(name + "_node", cylinder);
     
     StringBuilder sb = new StringBuilder();
     collada.append(sb);
@@ -38,6 +46,6 @@ public class CylinderProbe {
       out.close();
     }
     
-    System.out.println("OK Cylinder");
+    System.out.println("OK " + name);
   }
 }

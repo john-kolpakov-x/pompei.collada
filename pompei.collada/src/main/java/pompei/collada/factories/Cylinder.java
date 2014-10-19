@@ -5,8 +5,14 @@ import static java.lang.Math.sin;
 import pompei.collada.data_model.PoligonalMesh;
 
 public class Cylinder {
-  public static PoligonalMesh createMesh(PoligonalMesh cyl, int N, float R, float z1, float z2,
-      boolean closed, boolean quard) {
+  public int N;
+  public float R;
+  public float z1, z2;
+  
+  public boolean closed;
+  public boolean quard;
+  
+  public PoligonalMesh appendMesh(PoligonalMesh cyl) {
     int pc = cyl.pointCount();
     int nc = cyl.normalCount();
     
