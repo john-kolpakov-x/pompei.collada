@@ -15,5 +15,4 @@ public class VerticesMesh implements XmlAppender {
     U.append(sb, polylist);
     sb.append("</mesh>");
   }
-  
 }

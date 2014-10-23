@@ -13,5 +13,4 @@ public class TechniqueAccessor implements XmlAppender {
     accessor.append(sb);
     sb.append("</technique_common>");
   }
-  
 }

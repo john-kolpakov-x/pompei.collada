@@ -10,5 +10,4 @@ public class DifferentSummaOfVcountAndPointCount extends RuntimeException {
     this.summaOfVcount = summaOfVcount;
     this.pointCount = pointCount;
   }
-  
 }
