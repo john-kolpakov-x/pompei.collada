@@ -15,6 +15,12 @@ public class Vec3 {
     this.z = z;
   }
   
+  public void set(float x, float y, float z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+  
   public Vec3(Vec3 vec) {
     if (vec == null) {
       x = 0;
@@ -25,5 +31,9 @@ public class Vec3 {
       y = vec.y;
       z = vec.z;
     }
+  }
+  
+  public Vec3 copy() {
+    return new Vec3(this);
   }
 }

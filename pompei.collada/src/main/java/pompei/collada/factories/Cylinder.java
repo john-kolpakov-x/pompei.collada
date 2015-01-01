@@ -20,13 +20,13 @@ public class Cylinder {
     double dFI2 = dFI / 2;
     for (int i = 0; i < N; i++) {
       double fi = dFI * i;
-      float x = (float) (R * cos(fi));
-      float y = (float) (R * sin(fi));
+      float x = (float)(R * cos(fi));
+      float y = (float)(R * sin(fi));
       cyl.addPoint(x, y, z1);
       cyl.addPoint(x, y, z2);
       
-      float nx = (float) cos(fi + dFI2);
-      float ny = (float) sin(fi + dFI2);
+      float nx = (float)cos(fi + dFI2);
+      float ny = (float)sin(fi + dFI2);
       cyl.addNormal(nx, ny, 0);
       
       int j = i + 1;
