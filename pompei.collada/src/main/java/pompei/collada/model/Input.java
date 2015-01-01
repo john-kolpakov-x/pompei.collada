@@ -13,5 +13,4 @@ public class Input implements XmlAppender {
     U.appendAny(sb, "offset", offset);
     sb.append("/>");
   }
-  
 }

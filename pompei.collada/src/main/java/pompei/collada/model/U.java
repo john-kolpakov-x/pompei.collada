@@ -6,17 +6,17 @@ public class U {
   
   public static void appendAny(StringBuilder sb, String key, Object value) {
     if (value == null) return;
-    sb.append(" ").append(key).append("=\"").append(value).append('"');
+    sb.append(' ').append(key).append("=\"").append(value).append('"');
   }
   
   @SuppressWarnings("rawtypes")
   public static void appendEnum(StringBuilder sb, String key, Enum value) {
     if (value == null) return;
-    sb.append(" ").append(key).append("=\"").append(value.name()).append('"');
+    sb.append(' ').append(key).append("=\"").append(value.name()).append('"');
   }
   
   public static void appendInt(StringBuilder sb, String key, int value) {
-    sb.append(" ").append(key).append("=\"").append(value).append('"');
+    sb.append(' ').append(key).append("=\"").append(value).append('"');
   }
   
   public static void appendSource(StringBuilder sb, SourceRef source) {
@@ -38,6 +38,6 @@ public class U {
   
   public static String toStr(Vec3 vec) {
     if (vec == null) return "";
-    return vec.x + " " + vec.y + " " + vec.z;
+    return vec.x + " " + vec.y + ' ' + vec.z;
   }
 }

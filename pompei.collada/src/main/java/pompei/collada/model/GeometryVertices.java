@@ -18,5 +18,4 @@ public class GeometryVertices implements XmlAppender, HasId {
     U.append(sb, verticesMesh);
     sb.append("</geometry>");
   }
-  
 }
