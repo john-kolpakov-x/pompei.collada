@@ -12,7 +12,7 @@ public class Cylinder {
   public boolean closed;
   public boolean quard;
   
-  public PoligonalMesh appendMesh(PoligonalMesh cyl) {
+  public PoligonalMesh appendToMesh(PoligonalMesh cyl) {
     int pc = cyl.pointCount();
     int nc = cyl.normalCount();
     

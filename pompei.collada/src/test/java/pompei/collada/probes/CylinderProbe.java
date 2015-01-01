@@ -24,7 +24,7 @@ public class CylinderProbe {
     c.closed = true;
     c.quard = true;
     
-    c.appendMesh(cylinder);
+    c.appendToMesh(cylinder);
     
     {
       PoligonalMeshNode node = collada.newPoligonalMeshNode(name + "_node1", cylinder);
