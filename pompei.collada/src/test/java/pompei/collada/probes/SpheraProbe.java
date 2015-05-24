@@ -6,22 +6,20 @@ import java.io.PrintStream;
 import pompei.collada.data_model.Collada;
 import pompei.collada.data_model.PoligonalMesh;
 import pompei.collada.data_model.PoligonalMeshNode;
-import pompei.collada.factories.Cylinder;
+import pompei.collada.factories.Sphera;
 
-public class CylinderProbe {
+public class SpheraProbe {
   public static void main(String[] args) throws Exception {
-    String name = "Cylinder";
+    String name = "Sphera";
     
     Collada collada = new Collada();
     
     PoligonalMesh cylinder = collada.newPoligonalMesh(name);
     
-    Cylinder c = new Cylinder();
-    c.N = 3;
+    Sphera c = new Sphera();
+    c.N_ekvat = 100;
+    c.N_merid = 100;
     c.R = 1;
-    c.z1 = -1;
-    c.z2 = +1;
-    c.closed = true;
     c.quard = true;
     
     c.appendToMesh(cylinder);
